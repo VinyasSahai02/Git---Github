@@ -3,8 +3,22 @@ Choose bash and not powershell in terminal
 git init-->(git initialize)
 creates .git folder
 
+dir /a:h-->
+This command will display all hidden files and folders in the current directory.
+
 git status-->
 shows which current branch, commits and untracked files(U beside a file means untracked)
+
+git remote add origin https://github.com/VinyasSahai02/repoName.git-->
+This command will add the remote repository to the local repository
+
+git branch -M main-->
+This command will rename the branch from master to main
+
+git push -u origin main-->
+This command will push the local repository to the remote repository
+origin is remote and main in branch
+
 
 git add index.html OR git add . -->
 adds files to staging area 
@@ -28,6 +42,10 @@ git push origin master-->(origin is the remote repo and master is the branch)
 
 if we made some modification in our file but we dont want it
 git restore index.html-->this will undo the changes
+git chechout index.html-->this will revert the file to the last commit
+
+git diff index.html -->
+this will show the changes made in the file
 
 if we added a file that we dont want to add
 that is git add index.html 
