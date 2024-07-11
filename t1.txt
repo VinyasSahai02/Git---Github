@@ -1,0 +1,118 @@
+Choose bash and not powershell in terminal
+
+git init-->(git initialize)
+creates .git folder
+
+dir /a:h (for cmd) , ls -a(for git bash in vscode)-->
+This command will display all hidden files and folders in the current directory.
+
+git status-->
+shows which current branch, commits and untracked files(U beside a file means untracked)
+
+git remote add origin https://github.com/VinyasSahai02/repoName.git-->
+This command will add the remote repository to the local repository
+
+git branch -M main-->
+This command will rename the branch from master to main
+
+git push -u origin main-->
+This command will push the local repository to the remote repository
+origin is remote and main in branch
+
+
+git add index.html OR git add . -->
+adds files to staging area 
+U changes to A 
+
+git commit -m "message" -->
+commits files to local repo
+A gets erased
+
+Now if we change anything in the file, a M(modified) is shown beside the file
+so git add . and git commit again
+now you need to git push
+
+
+if git status shows branch info as
+"your branch is ahead of origin/master by 1 commit"
+it means that we made changes in our branch but they are not reflected in github repo
+so we need to push the changes to github repo
+git push origin master-->(origin is the remote repo and master is the branch)
+
+
+if we made some modification in our file but we dont want it
+git restore index.html-->this will undo the changes
+git chechout index.html-->this will revert the file to the last commit
+
+git diff index.html -->
+this will show the changes made in the file
+
+if we added a file that we dont want to add
+that is git add index.html 
+git status -->changes staged for commit(file is at the staging area)
+git restore --staged index.html -->this will unstage the file
+git status-->changes not staged for commit
+
+
+git log --oneline -->
+shows the commit history
+
+
+git commit -v --amend -->
+this will open the file in the editor and we can change the message and save it
+we need to press i in order to make the text editor active
+after changing press ESC to escape out of the editor
+now press shift+: and wq
+we have amended our commit message
+
+
+
+lets say we want to change header section in an already deployed website
+git branch --list or git branch -->
+shows the list of branches and * shows which branch you are currently on
+
+git branch myNewBranch -->
+creates a new branch
+git branch -m myNewBranch myNewHeader -->
+renames the branch
+
+git checkout myNewHeader-->
+switches to the new branch in order to write code in the new branch
+
+git checkout -b myTempBranch -->
+creates a new branch and switches to it at the same time
+
+git branch -D myTempBranch -->
+deletes the branch
+remember we should not be in the branch we want to delete
+
+touch index2.html -->
+vim index2.html OR makes an untracked file index3.html ie. file 
+at this moment does not belong to master or myNewHeader branch as we have not done git add .
+do git add . and git commit
+
+NOTE- any changes we make to any files not nesessarily to index2.html while we are in myNewHeader branch are not shown in master branch when we switch back
+git checkout master-->switches to master branch
+
+git merge myNewHeader -->
+merges the changes from myNewHeader branch to master branch
+
+if we change the same line of code in master and myNewHeader and merge it results into a conflict(C)
+git status -->shows the conflict
+so we git add . and git commit 
+OR
+git merge --abort --> aborts the merge
+
+
+git revert commitID --> revert to a previous commit
+git reset commitID -->reverts the previous commit and unstage the commits that we commited afterwords
+git reset commitID --hard -->reverts the previous commit and deletes the commit permanently
+
+
+if you have git add . and want to remove the files from the staging area
+git rm --cached -r .
+
+
+.gitignore
+- # for comments
+- *.txt(all files with .txt extension will be included)

@@ -1,0 +1,17 @@
+CLONING
+git clone https://github.com/Vinyassahai02/repo.git-->
+this command clones a gti repository
+
+git log-->
+this command shows the commit history of the cloned repository int this case
+
+--MERGING
+git branch myNewBranch
+git checkout myNewHeader
+- we did some changes in the newBranch and we want to keep the changes
+git chechout main
+git merge myNewBranch
+:q! (quit and discard changes,
+is used when merging branches to exit the Vim editor without saving changes because you might not want to keep the changes made in the branch you are merging into the main branch
+By using :q!, you ensure that the unsaved changes in the current branch are discarded, and the merge process continues with the latest version of the main branch)
+
